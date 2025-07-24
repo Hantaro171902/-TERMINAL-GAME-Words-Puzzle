@@ -21,7 +21,7 @@ public:
     void drawGrid(std::vector<std::vector<LetterTile>>& board, Position& cursor);
     void drawTitle();
     void drawScore(int score);
-}
+};
 
 #endif
 

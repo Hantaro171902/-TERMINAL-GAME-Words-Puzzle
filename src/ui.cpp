@@ -17,14 +17,18 @@ void UI::clearScreen() {
     cout << "\033[2J\033[H";  // Clear screen + move cursor to top-left
 }
 
-void UI::drawTitle() const {
+void UI::drawTitle() {
     cout << BOLD << CYAN;
     cout << "==========================" << endl;
     cout << "     TERMINAL WORD PUZZLE" << endl;
     cout << "==========================" << RESET << endl;
 }
 
-void UI::drawGrid(const vector<vector<LetterTile>>& board, const Position& cursor) const {
+void UI::drawScore(int score) {
+    cout << YELLOW << "Score: " << score << RESET << "\n" << endl;
+}
+
+void UI::drawGrid(vector<vector<LetterTile>>& board, Position& cursor) {
     for (size_t r = 0; r < board.size(); ++r) {
         for (size_t c = 0; c < board[r].size(); ++c) {
             const auto& tile = board[r][c];
